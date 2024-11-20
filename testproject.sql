@@ -1,30 +1,25 @@
-select * from users;
-insert into users values (1,'usuario1','password1','email1','0','img1','nom1','cognom1');
-drop table users;
+CREATE DATABASE dbweb;
 
-create table users(
-    id int primary key AUTO_INCREMENT,
-    username varchar(255) unique,
-    password varchar (255),
-    email varchar(255),
-    role varchar(255) default "usuari",
-    img varchar(255),
-    name varchar(255),
-    surname varchar(255)
+USE dbweb;
+
+CREATE TABLE songs (
+    id_song INT AUTO_INCREMENT,
+    song_name VARCHAR(255),
+    artist VARCHAR(255),
+    duration DECIMAL(10,2),
+    song_path VARCHAR(255),
+    PRIMARY KEY (id_song)
 );
 
-insert into users values (1,'admin','admin','email@pruebaa.com','admin','img1','admin','admin');
-insert into users values (2,'user','user','email@pruebab.com','user','img2','user','user');
-select from users;
+INSERT INTO songs (id_song, song_name, artist, duration, song_path) VALUES (1, "Song 1", "Artist 1", 3.45, "path1");
+INSERT INTO songs (id_song, song_name, artist, duration, song_path) VALUES (2, "Song 2", "Artist 2", 2.30, "path2");
 
-drop table canciones;
-
-create table songs(
-    id int primary key AUTO_INCREMENT,
-    name varchar(255) ,
-    artist varchar (255),
-    path varchar(255) unique,
-    duration int
+CREATE TABLE users (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255),
+    password VARCHAR(255),
+    email VARCHAR(255),
+    role VARCHAR(50) DEFAULT 'user'
 );
 
-insert into songs values (1,'cancion1','artista1','ruta1',100);
+INSERT INTO users (id_user, username, password, email, role) VALUES (1, "admin", "12345678", "admin@example.com", "administrator");
