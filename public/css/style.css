@@ -14,15 +14,9 @@ audio {
   outline: none;
 }
 
-/* Estilo para la barra de progreso */
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-timeline-container {
-  background-color: rgb(162, 145, 145) !important;
-}
 
 /* Estilo para el panel de controles */
 audio::-webkit-media-controls-panel {
-  background-color: var(--bs-white);
   border-radius: 0.5rem;
 }
 
@@ -73,7 +67,86 @@ form .btn-primary:hover {
 
 .btn-success:hover {
   color: #ffffff;
-  background-color: #0056b3 !important; /* Even darker green for hover */
-  border-color: #0056b3;
+  background-color: #03356a !important; /* Even darker green for hover */
+  border-color: #03356a;
 }
 
+.navbar{
+  background-color: darkgoldenrod;
+}
+
+.main-title{
+  font-size: 10em;
+}
+
+.song-col{
+  width: 200%;
+}
+
+.update-btns{
+left: 180px;
+  bottom: 39px;
+  
+}
+
+
+.class-space {
+  padding: 50px; /* Espaciado amplio para comodidad visual */
+  border-radius: 12px; /* Bordes redondeados para suavidad */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin: 30px auto; /* Centramos con márgenes verticales */
+  max-width: 800px; /* Ancho máximo para limitar contenido */
+  font-family: 'Arial', sans-serif; /* Fuente moderna y legible */
+}
+
+.class-space h2 {
+  font-size: 2.5em; /* Tamaño destacado */
+  color: #0022ff; /* Verde oscuro que refleja sostenibilidad */
+  margin-bottom: 20px; /* Espaciado inferior */
+  font-weight: bold; /* Resalta el título */
+}
+
+.class-space p {
+  font-size: 1.1em; /* Tamaño más accesible */
+  color: #034102; /* Verde grisáceo, elegante y legible */
+  line-height: 1.8; /* Mejora la legibilidad */
+}
+
+.class-space a {
+  display: inline-block;
+  margin-top: 20px; /* Espaciado superior */
+  padding: 10px 25px; /* Botón amplio */
+  background-color: #4CAF50; /* Verde vivo para CTA */
+  color: white; /* Contraste del texto */
+  text-decoration: none; /* Sin subrayado */
+  border-radius: 6px; /* Botón redondeado */
+  font-weight: bold; /* Llama la atención */
+  transition: background-color 0.3s ease; /* Efecto hover suave */
+}
+
+.class-space a:hover {
+  background-color: #388e3c; /* Verde más oscuro al pasar */
+  color: #f0f8ff; /* Contraste mejorado */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .class-space h2 {
+    font-size: 2rem;
+}
+
+.container-title h1{
+  font-size: 80px;
+}
+
+.songs-container{
+  width: 400px;
+}
+
+.update-btns{
+  left: 50px;
+    bottom: 39px;
+    
+  }
+
+}

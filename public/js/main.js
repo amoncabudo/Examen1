@@ -25,9 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <button class="btn btn-sm btn-dark mute-btn">
               <i class="bi bi-volume-up-fill"></i>
           </button>
-          <div class="progress flex-grow-1" style="height: 8px;">
-              <div class="progress-bar" role="progressbar" style="width: 0%"></div>
-          </div>
+      
       `;
       container.appendChild(controls);
 
@@ -35,7 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const playBtn = controls.querySelector('.play-btn');
       const pauseBtn = controls.querySelector('.pause-btn');
       const muteBtn = controls.querySelector('.mute-btn');
-      const progressBar = controls.querySelector('.progress-bar');
 
       playBtn.addEventListener('click', () => {
           audioElement.play();
@@ -51,12 +48,32 @@ document.addEventListener("DOMContentLoaded", () => {
               'bi bi-volume-mute-fill' : 'bi bi-volume-up-fill';
       });
 
-      audioElement.addEventListener('timeupdate', () => {
-          const progress = (audioElement.currentTime / audioElement.duration) * 100;
-          progressBar.style.width = `${progress}%`;
-      });
     }
   });
+});
+function saveCurrentSong(id_song) {
+    sessionStorage.setItem('currentSong', id_song);
+}
+
+function getCurrentSong() {
+    return sessionStorage.getItem('currentSong');
+}
+
+function playSong(id_song) {
+    console.log(`Playing song with ID: ${id_song}`);
+}
+
+document.querySelectorAll('.song').forEach(song => {
+    song.addEventListener('play', function() {
+        saveCurrentSong(this.id);
+    });
+});
+
+window.addEventListener('load', function() {
+    const currentSong = getCurrentSong();
+    if (currentSong) {
+        playSong(currentSong);
+    }
 });
 
 function formatTime(seconds) {
@@ -103,3 +120,4 @@ $(document).ready(function () {
         });
     });
 });
+

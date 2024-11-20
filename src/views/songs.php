@@ -14,6 +14,23 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container-lg">
+    <a class="navbar-brand" href="/index.php"><img src="/img/imatge4.png"  width="30" height="30"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index.php"><i class="bi bi-house-fill"></i></a>
+        </li>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/index.php"><i class="bi bi-house-fill"></i></a>
+        </li>
+</nav>
 
 <div class="container">
         <div class="table-responsive mt-4 rounded">
@@ -38,7 +55,7 @@
                                 <td class="align-middle">
                                     <div class="d-flex align-items-center justify-content-start gap-2 p-2 w-100">
                                         <!-- Contenedor del reproductor de audio -->
-                                        <div class="audio-player bg-white rounded-3 shadow-sm p-2 flex-grow-1">
+                                        <div class="audio-player rounded-3 shadow-sm p-2 flex-grow-1 bg-white">
                                             <audio id="myAudio" class="w-100">
                                                 <source src="<?= htmlspecialchars($song['song_path']) ?>" type="audio/mpeg">
                                                 Tu navegador no soporta el elemento de audio.
@@ -74,11 +91,11 @@
                                         <form action="index.php?r=updatesong" id="editSongForm" method="post" enctype="multipart/form-data">
                                             <input type="text" hidden name="song_id" value="<?= $song['id_song'] ?>">
                                             <div class="form-floating mb-3">
-                                                <input type="text" name="song_name" value="<?= $song['song_name'] ?>" class="form-control" id="song_name" placeholder="505">
+                                                <input type="text" name="song_name" value="<?= $song['song_name'] ?>" class="form-control" id="song_name" placeholder="Merodian">
                                                 <label for="song_name">Nombre de la canción</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input type="text" name="artist" value="<?= $song['artist'] ?>" class="form-control" id="artist" placeholder="Artic Monkeys">
+                                                <input type="text" name="artist" value="<?= $song['artist'] ?>" class="form-control" id="artist" placeholder="Dave">
                                                 <label for="artist">Artista</label>
                                             </div>
                                             <div class="form-floating mb-3">
